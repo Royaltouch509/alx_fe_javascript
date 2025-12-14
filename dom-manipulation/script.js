@@ -38,7 +38,7 @@ function loadQuotes() {
     
     // Check for session storage (last viewed quote)
     const lastQuoteIndex = sessionStorage.getItem('lastQuoteIndex');
-    if (lastQuoteIndex !== null && quotes.length > 0) {
+    if (lastQuoteIndex !== null && quotes.length >0) {
         const index = parseInt(lastQuoteIndex);
         if (index >= 0 && index < quotes.length) {
             displayQuote(index);
@@ -106,7 +106,7 @@ function setFilterSelect(filterValue) {
 }
 
 // Function to filter quotes based on selected category (as required by checker)
-function filterQuotes() {
+function filterQuote() {
     const selectedCategory = document.getElementById('categoryFilter').value;
     currentFilter = selectedCategory;
     saveFilter(currentFilter);
@@ -132,7 +132,7 @@ function displayQuote(index) {
     }
     
     // Ensure index is valid
-    const validIndex = Math.max(0, Math.min(index, filteredQuotes.length - 1));
+    const validIndex = Math.max(0, Math.min(index, filteredQuotes.length -1));
     const quote = filteredQuotes[validIndex];
     
     quoteDisplay.innerHTML = `
