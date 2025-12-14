@@ -66,6 +66,23 @@
             margin: 20px 0;
         }
         
+        .filter-container {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        #categoryFilter {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
         .form-container {
             background: white;
             padding: 20px;
@@ -95,13 +112,22 @@
 </head>
 <body>
     <h1>Dynamic Quote Generator</h1>
+    
+    <div class="filter-container">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterQuotes()">
+            <option value="all">All Categories</option>
+            <!-- Dynamically populated categories -->
+        </select>
+        <button id="newQuote">Show New Quote</button>
+    </div>
+    
     <div id="quoteDisplay">
         <blockquote>Click "Show New Quote" to get started!</blockquote>
         <div class="category"></div>
     </div>
     
     <div class="button-group">
-        <button id="newQuote">Show New Quote</button>
         <button id="exportBtn">Export Quotes (JSON)</button>
     </div>
     
